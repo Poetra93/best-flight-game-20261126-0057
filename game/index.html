@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merapi Ridge Run — a bush-pilot flight game</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #141c28;
+    min-height: 100%;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #f5f2e8;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+  canvas {
+    width: min(1280px, 96vw);
+    height: auto;
+    aspect-ratio: 1280 / 800;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    background: #7ec8e3;
+  }
+  .help {
+    font-size: 14px;
+    color: #b9c2cc;
+    text-align: center;
+    max-width: 1280px;
+  }
+  .help b { color: #f5f2e8; }
+  /* Screenshot mode (?shot=...): the canvas alone fills the window. */
+  body.shot { padding: 0; gap: 0; }
+  body.shot .help { display: none; }
+  body.shot canvas { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="800"></canvas>
+<p class="help"><b>W/S</b> throttle &nbsp;·&nbsp; <b>A/D</b> bank to climb &amp; dive &nbsp;·&nbsp; <b>Space</b> flaps &amp; brake &nbsp;·&nbsp; <b>P</b> pause &nbsp;·&nbsp; <b>R</b> restart &nbsp;·&nbsp; <b>M</b> mute &nbsp;·&nbsp; Mouse: click buttons, hold to steer</p>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
